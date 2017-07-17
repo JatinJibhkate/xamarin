@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="WorkOrderList"
+             x:Class="QuantumSpatial.View.WorkOrderList">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" VerticalOptions="FillAndExpand">
+                <ListView HasUnevenRows="True" SeparatorVisibility="Default" SeparatorColor="#8e8e8e" IsRefreshing="{Binding IsBusy, Mode=OneWay}" x:Name="lstWorkOrder">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="95">
+                                <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand">
+                                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" BackgroundColor="#e5e5e5">
+                                            <Label Text="{Binding WOName}" TextColor="#171717" FontSize="10" FontAttributes="Bold"  />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                                            <Label Text="{Binding Date}" TextColor="#171717" FontSize="10" FontAttributes="Bold"  />
+                                            <Label Text="{Binding Month}" TextColor="#171717" FontSize="10" FontAttributes="Bold"  />
+                                            <Label Text="{Binding Year}" TextColor="#171717" FontSize="10" FontAttributes="Bold"  />
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                                            <Label Text="{Binding WONumber}" TextColor="#171717" FontSize="10" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                                            
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <ActivityIndicator AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0" AbsoluteLayout.LayoutFlags="All"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       IsVisible="False"
+                       IsEnabled="True"
+                       x:Name="syncIndicator"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

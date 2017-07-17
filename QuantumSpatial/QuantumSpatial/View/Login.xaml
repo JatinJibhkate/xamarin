@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuantumSpatial.View.Login">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" >
+                <StackLayout Spacing="20" Padding="50" VerticalOptions="Start">
+                    <Label Text="Quantum Spatial" TextColor="#0a0941" FontAttributes="Italic" FontSize="60" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <OnPlatform.iOS>HelveticaNeue-Medium</OnPlatform.iOS>
+                                <OnPlatform.Android>sans-serif-medium</OnPlatform.Android>
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <!--<Image x:Name="imgHeader" Source="QuantumSpatialHeader.png" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>-->
+                    <Entry x:Name="entUserName" Placeholder="Username" Text="shrutika.suryavanshi@synerzip.com"  TextColor="Black" PlaceholderColor="Gray" HorizontalOptions="FillAndExpand" Keyboard="Email"></Entry>
+
+                    <Grid  HorizontalOptions="Fill" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry x:Name="entPassword" IsPassword="True"  Placeholder="Password" Text="KzV2RMZhCFXYnM9eN0ANfA==" TextColor="Black" PlaceholderColor="Gray" HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" ></Entry>
+                        <Image x:Name="Show_Password" Source="showpass.png" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Grid.Row="0" Grid.Column="1"/>
+                        <Image x:Name="Hide_Password" Source="hidepass.png" HeightRequest="20" IsVisible="False" VerticalOptions="Center" Grid.Row="0" Grid.Column="1"/>
+                    </Grid>
+
+                    <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand">
+                        <!--<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Button BackgroundColor="#3498DB" TextColor="White" Text="Reset" HorizontalOptions="FillAndExpand" HeightRequest="50" />
+                        </StackLayout>-->
+
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Button x:Name="btnLogin" Style="{StaticResource btnStyle}" Text="Login" HorizontalOptions="FillAndExpand" HeightRequest="50" Clicked="btnLogin_ClickedAsync" />
+                        </StackLayout>
+                    </StackLayout>                    
+                </StackLayout>
+            </ScrollView>
+            <ActivityIndicator AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0" AbsoluteLayout.LayoutFlags="All"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       IsVisible="False"
+                       IsEnabled="True"
+                       x:Name="syncIndicator"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
